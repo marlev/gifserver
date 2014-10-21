@@ -22,12 +22,14 @@ $html = null; //will hold the html output
 
 
 
+$html .= '<a href="https://github.com/marlev/gifserver"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>';
 
-$html = "Hello. I convert videos to gif animations";
+
+$html .= "Hello. I convert videos to gif animations";
 $html .= "<br>";
-$html .= "<b>1. Give me a video</b> - Add your video to the url like <a href='".$baseUrl."?video=".$testVideo."'>".$baseUrl."?video=".$testVideo."</a>";
+$html .= "<b>1. Give me a video</b> - Add your video url <a href='".$baseUrl."?video=".$testVideo."'>".$baseUrl."?video=".$testVideo."</a>";
 $html .= "<br>";
-$html .= "<b>2. json response</b> - Append &format=json like <a href='".$baseUrl."?video=".$testVideo."&format=json'>".$baseUrl."?video=".$testVideo."&format=json</a>";
+$html .= "<b>2. json response</b> - Append &format=json <a href='".$baseUrl."?video=".$testVideo."&format=json'>".$baseUrl."?video=".$testVideo."&format=json</a>";
 $html .= "<br>";
 $html .= "<small>* The animation will have 9 frames in a loop to reprecent the complete video</small>";
 $html .= "<br>";

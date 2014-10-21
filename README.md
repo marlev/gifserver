@@ -1,7 +1,7 @@
 gifserver
 =========
 
-``gifserver`` is a service written in PHP that transcodes videos to GIFs on the fly. The gif animation will have 9 frames in a loop to reprecent the complete video
+``gifserver`` is a service written in PHP that transcodes videos to GIFs on the fly. The gif animation will have 9 frames in a loop to represent the complete video
 
 **1.** Add your video url http://gifserver.levy.se/?video=http://levy.se/test.mp4
 
@@ -11,7 +11,7 @@ gifserver
 * Webserver with php
 * The service is a wrapper around ffmpeg ``$brew install ffmpeg`` if you have Homebrew installed
 * ImageMagic installed with php module ``$brew reinstall php55-imagick`` where php55 is your PHP version
-* Apace/webserver? Make sure it [can run cmd](http://stackoverflow.com/questions/21610417/osx-apache-allow-execution-of-shell-command-for-php-script-include-path ) 
+* Apace/webserver? Make sure it [can run cmd](http://stackoverflow.com/questions/21610417/osx-apache-allow-execution-of-shell-command-for-php-script-include-path )
 
 
 
