@@ -47,8 +47,9 @@ if($_GET['video']) {
   $video = $_GET['video']; //or request this with url?video=http://your-url-to-video
   $url=strtok($_GET[video],'?');
   $fileName = fileName($video); //retruns something like "e9edce95"
-  $origFileExt = explode(".", parse_url($video)['path'])[1]; //retruns something like "mp4"
-
+  $urlPath = parse_url($video);
+  $origFileExt = explode(".", $urlPath['path']); //retruns something like "mp4"
+  $origFileExt = $origFileExt[1];
   //If we already have the animation on disc
   if(file_exists($fileName.".gif")) $gifExist = $fileName.".gif";
 }
