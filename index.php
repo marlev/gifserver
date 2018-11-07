@@ -31,6 +31,8 @@ $html .= "<b>1. Give me a video</b> - Add your video url <a href='".$baseUrl."?v
 $html .= "<br>";
 $html .= "<b>2. json response</b> - Append &format=json <a href='".$baseUrl."?video=".$testVideo."&format=json'>".$baseUrl."?video=".$testVideo."&format=json</a>";
 $html .= "<br>";
+$html .= "<b>3. file response</b> - Append &format=file <a href='".$baseUrl."?video=".$testVideo."&format=file'>".$baseUrl."?video=".$testVideo."&format=file</a>";
+$html .= "<br>";
 $html .= "<small>* The animation will have 9 frames in a loop to reprecent the complete video</small>";
 $html .= "<br>";
 $html .= "<br>";
@@ -154,8 +156,17 @@ if( ($video) || ($gifExist) ) {
 
 }
 
-//HTML or JSON
-if($_GET['format'] == "json") {
+//HTML or JSON or FILE
+if($_GET['format'] === "file") {
+  $completeUrl = "http://".$_SERVER[HTTP_HOST].strtok($_SERVER['REQUEST_URI'], '?').$gifFileName;
+  //echo $completeUrl;
+  //echo strtok($_SERVER['REQUEST_URI'], '?');
+  //header($completeUrl); /* Redirect browser */
+  header("Location: $completeUrl");
+  exit();
+}
+
+if($_GET['format'] === "json") {
   $completeUrl = strtok("http://".$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI],'?').$gifFileName;
   if( ($_GET['client']) && ($_GET['project']) ) {
     $completeUrl .= "?project_id=".$_GET['client']."/".$_GET['project'];
